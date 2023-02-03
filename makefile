@@ -2,8 +2,8 @@ DEPS = sort
 compile: main.c 
 		gcc  main.c -o  $(DEPS)
 
-runSelection: $(DEPS)
-	  ./$(DEPS)
+runSelection: selection
+	  ./selection
 
 run: $(DEPS)
 	 	./$(DEPS)
