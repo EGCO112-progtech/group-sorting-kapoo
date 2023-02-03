@@ -12,18 +12,50 @@ void display(int a[],int n){
 
 void selectionSort(int data[], int length) 
 { 
-	int i, j, m, mi; 
-	
-     display(data,length);
-     
-	
+  display(data,length);
+	int i, j, m, mi ;
+  for ( j = 0 ; j < length-1 ; j++ )
+  {
+
+    m = data[j];
+    mi = j;
+
+    for ( i = j + 1 ; i < length ; i++)
+    {
+      if ( m < data[i] )
+      {
+        m = data[i] ;
+        mi = i;
+      }
+    }
+    swap(&data[j],&data[mi]);
+	  display(data,length);
+    printf("\n");
+  }    
 } 
 
 
 
-void insertion(int a[],int n){
+void insertion(int a[],int n)
+{
 
-
+   int i , j ;
+  for ( j = 1 ; j < n ; j++)
+  {
+    int insert = a[j];
+    for ( i = j - 1 ; i >= 0 ; i--)
+    {
+      if (insert > a[i]) break;
+      else
+      {
+        a[i+1] = a[i];
+      }
+      display(a,n);
+    }
+    a[i+1] = insert;
+    display(a,n);
+    printf("\n");
+  }
 }
 
 void swap(int *a,int *b){
@@ -34,18 +66,22 @@ void swap(int *a,int *b){
   
 }
 
-void bubbleSort(int a[],int n){
-
-int i,j;
-int sorted;
-// how may pair to compare?
-for(j=1;j<=n-1;j++){
- 
+void bubbleSort(int a[],int n)
+{
   display(a,n);
- }
-  
+  for(int i = 0; i < n-1; i++)
+  {
+    int sorted;
+    for (int j = 0; j < n-i-1; j++)
+    {
+      if (a[j] < a[j + 1])
+      {
+        swap(&a[j], &a[j+1]);
+        sorted = 1;
+      }
+      display(a, n);
+    }
+    printf("\n");
+    if (sorted == 0) break;
+  }
 }
-
-
-
-
