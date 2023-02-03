@@ -17,17 +17,25 @@ void display(int a[], int n) {
   printf("\n");
 }
 
-void selectionSort(int data[], int length) {
-  int i, j, mi;
-  for (i = 0; j < length - 1; i++) {
-    mi = i;
-    for (j = i + 1; i < length; j++) {
-      if (data[j] > data[mi]) {
-        mi = j;
+void selectionSort(int a[], int n) {
+  int i, j;
+  int m = a[0]; // dec m is min
+  int mi = 0;
+
+  for (j = 0; j < n - 1; j++) {
+    m = a[j];
+    mi = j;
+
+    for (i = j + 1; i < n; i++) {
+      if (m < a[i]) // find real min
+      // if (a[mi] > a[i])
+      {
+        m = a[i];
+        mi = i;
       }
     }
-    swap(&data[i], &data[mi]);
-    display(data, length);
+    swap(&a[j], &a[mi]);
+    display(a, n);
     printf("\n");
   }
 }
