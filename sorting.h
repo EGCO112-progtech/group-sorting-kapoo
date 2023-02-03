@@ -38,24 +38,6 @@ void selectionSort(int data[], int length)
 
 void insertion(int a[],int n)
 {
-
-   int i , j ;
-  for ( j = 1 ; j < n ; j++)
-  {
-    int insert = a[j];
-    for ( i = j - 1 ; i >= 0 ; i--)
-    {
-      if (insert > a[i]) break;
-      else
-      {
-        a[i+1] = a[i];
-      }
-      display(a,n);
-    }
-    a[i+1] = insert;
-    display(a,n);
-    printf("\n");
-  }
 }
 
 void swap(int *a,int *b){
