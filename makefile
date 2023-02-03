@@ -1,12 +1,13 @@
+DEPS= sort
 compile: main.c 
-	 gcc  main.c -o bubble
+	 gcc  main.c -o $(DEPS)
 
 runSelection: selection
 	  ./selection
 
-run: bubble
-	 ./bubble
+run: $(DEPS)
+	 ./$(DEPS)
 
 
-clean: bubble
-	 rm bubble
+clean: $(DEPS)
+	 rm $(DEPS)
