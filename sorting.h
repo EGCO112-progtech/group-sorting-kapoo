@@ -18,11 +18,11 @@ void display(int a[], int n) {
 }
 
 void selectionSort(int data[], int length) {
-  int i, j, m, mi;
+  int i, j, mi;
   for (i = 0; j < length - 1; i++) {
     mi = i;
     for (j = i + 1; i < length; j++) {
-      if (data[j] > data[m, mi]) {
+      if (data[j] > data[mi]) {
         mi = j;
       }
     }
